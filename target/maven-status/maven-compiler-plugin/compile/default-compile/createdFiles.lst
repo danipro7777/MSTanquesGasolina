@@ -6,6 +6,7 @@ com\example\demo\services\ProviderService.class
 com\example\demo\repositories\ProviderRepository.class
 com\example\demo\controllers\ProviderController.class
 com\example\demo\services\PhonesService.class
+com\example\demo\response\TanquesResponse.class
 com\example\demo\models\Phones.class
 com\example\demo\services\TanquesService.class
 com\example\demo\repositories\TanquesRepository.class

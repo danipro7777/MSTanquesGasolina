@@ -1,21 +1,27 @@
-package com.example.demo.models;
+package com.example.demo.response;
 
-import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-@Entity
-@Table(name = "tanques")
-public class Tanques {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false)
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown=true)
+public class TanquesResponse {
+    @JsonProperty("id")
     private Integer id;
+    @JsonProperty("capacidad")
     private String capacidad;
+    @JsonProperty("nivelactual")
     private Double nivelactual;
+    @JsonProperty("tipogasolina")
     private String tipogasolina;
+    @JsonProperty("ubicacion")
     private String ubicacion;
+    @JsonProperty("preciogalon")
     private Double preciogalon;
+    @JsonProperty("cliente")
     private Integer cliente;
+    @JsonProperty("tipopago")
     private String tipopago;
 
     public Integer getId() {

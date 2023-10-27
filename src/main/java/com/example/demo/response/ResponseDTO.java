@@ -20,6 +20,16 @@ public class ResponseDTO {
 
     @JsonProperty("provider")
     private ProviderResponse provider;
+    @JsonProperty("tanques")
+    private TanquesResponse tanques;
+
+    public TanquesResponse getTanques() {
+        return tanques;
+    }
+
+    public void setTanques(TanquesResponse tanques) {
+        this.tanques = tanques;
+    }
 
     public ProviderResponse getProvider() {
         return provider;

@@ -1,9 +1,6 @@
 package com.example.demo.request;
 
-import com.example.demo.models.Phones;
-import com.example.demo.models.Provider;
-import com.example.demo.models.Role;
-import com.example.demo.models.User;
+import com.example.demo.models.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -19,6 +16,17 @@ public class Request {
     private Phones phones;
     @JsonProperty("provider")
     private Provider provider;
+
+    @JsonProperty("tanques")
+    private Tanques tanques;
+
+    public Tanques getTanques() {
+        return tanques;
+    }
+
+    public void setTanques(Tanques tanques) {
+        this.tanques = tanques;
+    }
 
     public Provider getProvider() {
         return provider;
