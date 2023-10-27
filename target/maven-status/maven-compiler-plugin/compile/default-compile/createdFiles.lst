@@ -1,9 +1,14 @@
+com\example\demo\response\PhonesResponse.class
+com\example\demo\controllers\PhonesController.class
 com\example\demo\models\Provider.class
 com\example\demo\controllers\TanquesController.class
-com\example\demo\services\TanquesService.class
-com\example\demo\repositories\TanquesRepository.class
 com\example\demo\services\ProviderService.class
 com\example\demo\repositories\ProviderRepository.class
-com\example\demo\models\Tanques.class
 com\example\demo\controllers\ProviderController.class
+com\example\demo\services\PhonesService.class
+com\example\demo\models\Phones.class
+com\example\demo\services\TanquesService.class
+com\example\demo\repositories\TanquesRepository.class
+com\example\demo\models\Tanques.class
+com\example\demo\repositories\PhonesRepository.class
 com\example\demo\response\ProviderResponse.class

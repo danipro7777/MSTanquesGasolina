@@ -1,8 +1,10 @@
 package com.example.demo.services;
 
+import com.example.demo.models.Phones;
 import com.example.demo.models.Provider;
 import com.example.demo.repositories.ProviderRepository;
 import com.example.demo.request.RequestDTO;
+import com.example.demo.response.PhonesResponse;
 import com.example.demo.response.ProviderResponse;
 import com.example.demo.response.ResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;

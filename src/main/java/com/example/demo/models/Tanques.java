@@ -2,9 +2,6 @@ package com.example.demo.models;
 
 import jakarta.persistence.*;
 
-import java.math.BigDecimal;
-import java.sql.Timestamp;
-
 @Entity
 @Table(name = "tanques")
 public class Tanques {
@@ -12,15 +9,13 @@ public class Tanques {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Integer id;
-    private Integer capacidad;
+    private String capacidad;
     private Double nivelactual;
     private String tipogasolina;
     private String ubicacion;
     private Double preciogalon;
     private String cliente;
     private String tipopago;
-    private Timestamp created_at;
-    private Timestamp updated_at;
 
     public Integer getId() {
         return id;
@@ -30,11 +25,11 @@ public class Tanques {
         this.id = id;
     }
 
-    public Integer getCapacidad() {
+    public String getCapacidad() {
         return capacidad;
     }
 
-    public void setCapacidad(Integer capacidad) {
+    public void setCapacidad(String capacidad) {
         this.capacidad = capacidad;
     }
 
@@ -84,21 +79,5 @@ public class Tanques {
 
     public void setTipopago(String tipopago) {
         this.tipopago = tipopago;
-    }
-
-    public Timestamp getCreated_at() {
-        return created_at;
-    }
-
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
-    }
-
-    public Timestamp getUpdated_at() {
-        return updated_at;
-    }
-
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
     }
 }
