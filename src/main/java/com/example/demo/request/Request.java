@@ -16,7 +16,6 @@ public class Request {
     private Phones phones;
     @JsonProperty("provider")
     private Provider provider;
-
     @JsonProperty("tanques")
     private Tanques tanques;
 

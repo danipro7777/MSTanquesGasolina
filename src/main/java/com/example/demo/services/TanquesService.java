@@ -29,6 +29,20 @@ public class TanquesService {
         return tanquesRepository.findById(id);
     }
 
+    //GET ID Y NIVEL ACTUAL
+    public Optional<Double> getNivelActualPorID(Integer id){
+        if(tanquesRepository.existsById(id)){
+            Optional<Tanques> tanques = tanquesRepository.findById(id);
+            if (tanques.isPresent()) {
+                return Optional.of(tanques.get().getNivelactual());
+            }else{
+                return Optional.empty();
+            }
+        }else{
+            return Optional.empty();
+        }
+    }
+
     //POST
     public ResponseEntity<ResponseDTO> saveTanques(RequestDTO requestDTO){
         Tanques tanques = tanquesRepository.save(requestDTO.getRequest().getTanques());
@@ -76,6 +90,23 @@ public class TanquesService {
 
         ResponseDTO responseDTO = new ResponseDTO();
         responseDTO.setResponse("Tanque actualizado correctamente");
+        responseDTO.setTanques(tanquesResponse);
+
+        return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
+    }
+
+    //PUT NIVEL ACTUAL
+    public ResponseEntity<ResponseDTO> putNivelActual(RequestDTO requestDTO) {
+        System.out.println(requestDTO.getRequest().getTanques().getNivelactual());
+        System.out.println(requestDTO.getRequest().getTanques().getId());
+        tanquesRepository.updateNivelActual(requestDTO.getRequest().getTanques().getNivelactual(),
+                requestDTO.getRequest().getTanques().getId());
+
+        TanquesResponse tanquesResponse = new TanquesResponse();
+        tanquesResponse.setNivelactual(requestDTO.getRequest().getTanques().getNivelactual());
+
+        ResponseDTO responseDTO = new ResponseDTO();
+        responseDTO.setResponse("Nivel actualizado correctamente");
         responseDTO.setTanques(tanquesResponse);
 
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
